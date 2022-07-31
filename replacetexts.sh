@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+echo "cone here"
+cd /home/project
+mv $PROJECTDIR old_$PROJECTDIR
+git clone $GITURL
+echo "done clone"
 ###sed -i 's|"ng serve|"ng serve --poll=2000  --base-href=  --public-host=0.0.0.0/'${CONTAINERPATH}'_op --host 0.0.0.0 --port 4200 --disable-host-check|g' /home/project/$PROJECTDIR/package.json
 sed -i 's|"ng serve"|"ng serve --poll=2000  --host 0.0.0.0 --port 4200 --disable-host-check"|g' /home/project/$PROJECTDIR/package.json
 ##sed -i 's|base href="/"|base href="/'${CONTAINERPATH}'_op/"|g' /home/project/$PROJECTDIR/src/index.html
